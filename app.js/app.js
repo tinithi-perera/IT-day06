@@ -119,3 +119,34 @@
 //      console.log(result);
 // }
 
+
+//////////////////////////////////////////
+let customerList=[];
+function btnAddCustomerOnAction(){
+    let txtName=document.getElementById("txtName").value;
+    let txtAddress=document.getElementById("txtAddress").value;
+    let txtAge=document.getElementById("txtAge").value;
+    let txtEmail=document.getElementById("txtEmail").value;
+    let txtSalary=document.getElementById("txtSalary").value;
+
+    console.log(txtName);
+    console.log(txtAddress);
+    console.log(txtAge);
+    console.log(txtEmail);
+    console.log(txtSalary);
+
+    let customer={
+        name:txtName,
+        address:txtAddress,
+        age:txtAge,
+        email:txtEmail,
+        salary:txtSalary
+    }
+    
+    customerList.push(customer);
+    console.log(customerList);
+    
+    
+    
+    
+}
