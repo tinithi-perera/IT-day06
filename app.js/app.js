@@ -11,7 +11,7 @@
 //         this.address=address;
 //     }
 // }
- 
+
 // let s1=new Student("Tinithi",22,"moratuwa");
 // console.log(s1);
 
@@ -74,15 +74,15 @@
 // let num=0;
 // function increase(){
 //     console.log("clicked");
-    
+
 //     heading.innerText=++num;
-    
+
 // }
 // function decrease(){
 //     console.log("clicked");
-    
+
 //     heading.innerText=--num;
-    
+
 // }
 
 
@@ -90,9 +90,9 @@
 //     let textint=document.getElementById("inputtext");
 //     let heading=document.getElementById("heading");
 //     heading.innerText=textint.value;
-    
+
 //     console.log("clicked");
-    
+
 // }
 
 // function addition(){
@@ -121,13 +121,13 @@
 
 
 //////////////////////////////////////////
-let customerList=[];
-function btnAddCustomerOnAction(){
-    let txtName=document.getElementById("txtName").value;
-    let txtAddress=document.getElementById("txtAddress").value;
-    let txtAge=document.getElementById("txtAge").value;
-    let txtEmail=document.getElementById("txtEmail").value;
-    let txtSalary=document.getElementById("txtSalary").value;
+let customerList = [];
+function btnAddCustomerOnAction() {
+    let txtName = document.getElementById("txtName").value;
+    let txtAddress = document.getElementById("txtAddress").value;
+    let txtAge = document.getElementById("txtAge").value;
+    let txtEmail = document.getElementById("txtEmail").value;
+    let txtSalary = document.getElementById("txtSalary").value;
 
     console.log(txtName);
     console.log(txtAddress);
@@ -135,18 +135,34 @@ function btnAddCustomerOnAction(){
     console.log(txtEmail);
     console.log(txtSalary);
 
-    let customer={
-        name:txtName,
-        address:txtAddress,
-        age:txtAge,
-        email:txtEmail,
-        salary:txtSalary
+    let customer = {
+        name: txtName,
+        address: txtAddress,
+        age: txtAge,
+        email: txtEmail,
+        salary: txtSalary
     }
-    
     customerList.push(customer);
+    loadTable();
     console.log(customerList);
-    
-    
-    
-    
 }
+
+function loadTable() {
+    let tblcustomers = document.getElementById("tblCustomers");
+    let body = "";
+    for (let i = 0; i < customerList.length; i++) {
+        body += `<tr>
+            <td>${customerList[i].name}</td>
+            <td>${customerList[i].address}</td>
+            <td>${customerList[i].age}</td>
+            <td>${customerList[i].email}</td>
+            <td>${customerList[i].salary}</td>
+        </tr>`;
+    }
+    tblcustomers.innerHTML = body;
+    console.log(tblcustomers);
+}
+
+
+
+
